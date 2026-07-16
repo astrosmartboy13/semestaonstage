@@ -1,0 +1,352 @@
+/* ======================================================
+   SIGNAL13 Dashboard
+   Version : 1.0
+====================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    background:#FFF000;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    color:#000;
+
+}
+
+body{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+/* ======================================================
+   TOP BAR
+====================================================== */
+
+.topbar{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    padding:40px 60px;
+
+}
+
+.status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+}
+
+#status-dot{
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:#18d118;
+
+}
+
+.datetime{
+
+    text-align:right;
+
+    line-height:1.4;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+}
+
+/* ======================================================
+   CONTENT
+====================================================== */
+
+.container{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+/* ======================================================
+   LOGO
+====================================================== */
+
+.logo{
+
+    height:220px;
+
+    width:auto;
+
+    margin-bottom:40px;
+
+}
+
+/* ======================================================
+   EVENT
+====================================================== */
+
+#event-name{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    margin-bottom:28px;
+
+    line-height:1.2;
+
+}
+
+/* ======================================================
+   DURATION
+====================================================== */
+
+.duration-title{
+
+    font-size:22px;
+
+    margin-bottom:12px;
+
+}
+
+#duration{
+
+    font-size:36px;
+
+    font-weight:bold;
+
+    margin-bottom:42px;
+
+}
+
+/* ======================================================
+   LINE
+====================================================== */
+
+hr{
+
+    width:720px;
+
+    max-width:90%;
+
+    border:none;
+
+    border-top:2px solid rgba(0,0,0,.35);
+
+    margin:34px 0;
+
+}
+
+/* ======================================================
+   MENU
+====================================================== */
+
+.menu{
+
+    display:flex;
+
+    gap:18px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+}
+
+.menu button{
+
+    width:170px;
+
+    height:56px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#000;
+
+    color:#FFF;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.menu button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* ======================================================
+   CREW
+====================================================== */
+
+.crew{
+
+    font-size:18px;
+
+    line-height:2;
+
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+footer{
+
+    text-align:center;
+
+    padding:24px;
+
+}
+
+footer div{
+
+    font-size:14px;
+
+    text-transform:lowercase;
+
+}
+
+footer small{
+
+    display:block;
+
+    margin-top:4px;
+
+    font-size:12px;
+
+    text-transform:lowercase;
+
+}
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media (max-width:900px){
+
+.topbar{
+
+    padding:28px;
+
+}
+
+.datetime{
+
+    font-size:15px;
+
+}
+
+.status{
+
+    font-size:15px;
+
+}
+
+.logo{
+
+    height:170px;
+
+    margin-bottom:36px;
+
+}
+
+#event-name{
+
+    font-size:34px;
+
+}
+
+.duration-title{
+
+    font-size:20px;
+
+}
+
+#duration{
+
+    font-size:36px;
+
+}
+
+.menu{
+
+    flex-direction:column;
+
+    width:100%;
+
+    align-items:center;
+
+}
+
+.menu button{
+
+    width:100%;
+
+    max-width:320px;
+
+}
+
+.crew{
+
+    font-size:16px;
+
+}
+
+footer{
+
+    padding:20px;
+
+}
+
+}
