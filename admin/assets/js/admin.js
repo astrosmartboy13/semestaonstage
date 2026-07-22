@@ -9,7 +9,14 @@
         "showStatus",
         "rundownUrl",
         "productionDocsUrl",
-        "instagramUrl"
+        "instagramUrl",
+        "dashboardUrl",
+        "timerUrl",
+        "backstageUrl",
+        "timelineUrl",
+        "studioUrl",
+        "editorUrl",
+        "adminUrl"
     ];
     const form = document.getElementById("event-form");
     const saveButton = document.getElementById("save-button");
@@ -83,6 +90,11 @@
         const response = await fetch(url, options);
         const data = await response.json();
 
+        if (response.status === 401) {
+            window.location.href = "/login?next=" + encodeURIComponent(window.location.pathname);
+            return null;
+        }
+
         if (!response.ok) {
             const message = data && data.error ? data.error.message : "Request failed";
             const error = new Error(message);
@@ -105,6 +117,14 @@
             });
 
             snapshot = Object.assign({}, data);
+            snapshot.dashboardUrl = snapshot.dashboardUrl || "https://dashboard.semestaonstage.com";
+            snapshot.timerUrl = snapshot.timerUrl || "https://timer.semestaonstage.com";
+            snapshot.backstageUrl = snapshot.backstageUrl || "https://backstage.semestaonstage.com";
+            snapshot.timelineUrl = snapshot.timelineUrl || "https://timeline.semestaonstage.com";
+            snapshot.studioUrl = snapshot.studioUrl || "https://studio.semestaonstage.com";
+            snapshot.editorUrl = snapshot.editorUrl || "https://editor.semestaonstage.com";
+            snapshot.adminUrl = snapshot.adminUrl || "https://admin.semestaonstage.com";
+            snapshot.instagramUrl = snapshot.instagramUrl || "https://www.instagram.com/semesta.show";
             fillForm(snapshot);
             setDirty(false);
             setStatus("ready", "Ready");

@@ -18,11 +18,8 @@ const Signal13Dashboard = (function () {
             { service: "OnTime", status: "unknown" },
             { service: "Tunnel", status: "unknown" }
         ],
-        signal13Version: "3.0",
-        dashboardVersion: "2.0.0",
-        buildVersion: "Sprint 03A",
-        copyright: "2026 SIGNAL13",
-        version: "2.0.0"
+        product: "Pusat Kendali Semesta",
+        version: "v1.0.0"
     };
 
     async function loadEventData() {
@@ -36,6 +33,16 @@ const Signal13Dashboard = (function () {
     }
 
     function resolveQuickAccessUrl(key, data) {
+        const eventUrlFields = {
+            dashboard: "dashboardUrl",
+            stageTimer: "timerUrl",
+            backstage: "backstageUrl",
+            timeline: "timelineUrl",
+            studio: "studioUrl",
+            editor: "editorUrl",
+            controlCenter: "adminUrl"
+        };
+
         if (key === "rundown" && data.rundownUrl) {
             return data.rundownUrl;
         }
@@ -44,11 +51,19 @@ const Signal13Dashboard = (function () {
             return data.instagramUrl;
         }
 
+        if (eventUrlFields[key] && data[eventUrlFields[key]]) {
+            return data[eventUrlFields[key]];
+        }
+
         if (!window.SIGNAL13 || !window.SIGNAL13[key]) {
             return "#";
         }
 
         const target = window.SIGNAL13[key];
+        if (typeof target === "string" && /^https?:\/\//i.test(target)) {
+            return target;
+        }
+
         if (typeof target === "string" && target.startsWith("/")) {
             return target;
         }
@@ -124,11 +139,7 @@ const Signal13Dashboard = (function () {
         Signal13UI.setText("show-status", showStatus, fallbackData.showStatus);
         Signal13UI.setText("show-status-badge", showStatus, fallbackData.showStatus);
         Signal13UI.setText("system-version", eventData.version, fallbackData.version);
-        Signal13UI.setText("sidebar-version", "v" + eventData.dashboardVersion, "v" + fallbackData.dashboardVersion);
-        Signal13UI.setText("signal13-version", eventData.signal13Version, fallbackData.signal13Version);
-        Signal13UI.setText("dashboard-version", eventData.dashboardVersion, fallbackData.dashboardVersion);
-        Signal13UI.setText("build-version", eventData.buildVersion, fallbackData.buildVersion);
-        Signal13UI.setText("copyright", eventData.copyright, fallbackData.copyright);
+        Signal13UI.setText("sidebar-version", eventData.version, fallbackData.version);
 
         Signal13UI.setShowStatus("#show-status-badge", showStatus);
         renderQuickAccess(eventData);

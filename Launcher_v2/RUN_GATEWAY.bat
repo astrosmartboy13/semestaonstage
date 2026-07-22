@@ -10,7 +10,7 @@ REM Cek apakah Gateway sudah hidup
 REM =====================================================
 
 powershell -command ^
-"try { Invoke-WebRequest '%GATEWAY_HEALTH%' -UseBasicParsing > $null; exit 0 } catch { exit 1 }"
+"try { Invoke-WebRequest '%GATEWAY_HEALTH%' -UseBasicParsing ^| Out-Null; exit 0 } catch { exit 1 }"
 
 if %errorlevel%==0 (
     echo Gateway already running.

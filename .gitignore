@@ -4,6 +4,11 @@ node_modules/
 # Logs
 logs/
 *.log
+launcher/logs/
+
+# Test/runtime artifacts
+test-results/
+**/chrome-profile*/
 
 # Archives
 *.zip
@@ -24,3 +29,16 @@ Thumbs.db
 # Temporary
 *.tmp
 *.bak
+
+# SIGNAL13 Launcher runtime/local state
+launcher/
+launcher/state.json
+launcher/*.lock
+launcher/config.local.json
+Launcher_v2/state/
+Launcher_v2/logs/
+Launcher_v2/config.local.json
+**/$null
+
+# SIGNAL13 Auth local secrets
+auth/config.local.json

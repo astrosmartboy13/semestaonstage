@@ -1,0 +1,26 @@
+{
+  "projectRoot": "C:\\SIGNAL13-DEV",
+  "ontimeExecutable": "C:\\Program Files\\ontime\\ontime.exe",
+  "ontimePort": 4001,
+  "gatewayScript": "gateway.js",
+  "gatewayPort": 8080,
+  "cloudflaredExecutable": "C:\\SIGNAL13-DEV\\tools\\cloudflared.exe",
+  "tunnelName": "signal13",
+  "localUrls": {
+    "editor": "http://localhost:4001/editor/",
+    "timer": "http://localhost:4001/timer/",
+    "backstage": "http://localhost:4001/backstage/"
+  },
+  "onlineUrls": {
+    "dashboard": "https://dashboard.semestaonstage.com",
+    "timer": "https://timer.semestaonstage.com",
+    "admin": "https://admin.semestaonstage.com"
+  },
+  "timeouts": {
+    "waitSeconds": 1,
+    "tunnelWarmupSeconds": 3
+  },
+  "browser": {
+    "open": true
+  }
+}

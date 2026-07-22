@@ -10,21 +10,22 @@ REM ---------- PATH ----------
 
 set ONTIME_EXE=C:\Program Files\ontime\ontime.exe
 
-set GATEWAY_DIR=C:\SIGNAL13
+for %%I in ("%~dp0..") do set GATEWAY_DIR=%%~fI
 set GATEWAY_FILE=gateway.js
 
-set CLOUDFLARE_EXE=C:\SIGNAL13\tools\cloudflared.exe
+set CLOUDFLARE_EXE=%GATEWAY_DIR%\tools\cloudflared.exe
 set TUNNEL_NAME=signal13
 
 REM ---------- URL ----------
 
-set ONTIME_URL=http://127.0.0.1:4001/
+set ONTIME_URL=http://localhost:4001/
 
-set GATEWAY_HEALTH=http://127.0.0.1:8080/health
+set GATEWAY_HEALTH=http://localhost:8080/health
 
-set DASHBOARD=http://127.0.0.1:8080/dashboard/
-set EDITOR=http://127.0.0.1:8080/editor/
-set TIMER=http://127.0.0.1:8080/timer/
-set BACKSTAGE=http://127.0.0.1:8080/backstage/
-set TIMELINE=http://127.0.0.1:8080/timeline/
-set STUDIO=http://127.0.0.1:8080/studio/
+set LOCAL_EDITOR=http://localhost:4001/editor/
+set LOCAL_TIMER=http://localhost:4001/timer/
+set LOCAL_BACKSTAGE=http://localhost:4001/backstage/
+
+set DASHBOARD=https://dashboard.semestaonstage.com
+set TIMER=https://timer.semestaonstage.com
+set ADMIN=https://admin.semestaonstage.com

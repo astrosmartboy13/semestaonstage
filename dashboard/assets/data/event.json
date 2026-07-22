@@ -1,10 +1,10 @@
 {
-  "project": "Semesta On Stage",
-  "venue": "Istora Senayan, Jakarta",
-  "eventDate": "2026-07-19",
+  "project": "Semesta On Stage - Test Server",
+  "venue": "Online",
+  "eventDate": "2026-07-22",
   "duration": "05:30:00",
-  "showDirector": "Aji Saputra",
-  "stageManager": "Ridwan",
+  "showDirector": "Aji Saputra Babah",
+  "stageManager": "Abdul13",
   "showStatus": "READY",
   "rundownUrl": "https://docs.google.com/spreadsheets/d/1odZIRCgO82zJ1Ep2xhQwvb2TM6RrDxRAgb-LP7ufTEg/edit?usp=sharing",
   "rundown": [
@@ -30,10 +30,14 @@
     }
   ],
   "productionDocsUrl": "",
-  "signal13Version": "3.0",
-  "dashboardVersion": "2.0.0",
-  "buildVersion": "Sprint 03A",
-  "copyright": "2026 SIGNAL13",
-  "version": "2.0.0",
-  "instagramUrl": ""
+  "version": "v1.0.0",
+  "instagramUrl": "https://www.instagram.com/semesta.show",
+  "dashboardUrl": "https://dashboard.semestaonstage.com",
+  "timerUrl": "https://timer.semestaonstage.com",
+  "backstageUrl": "https://backstage.semestaonstage.com",
+  "timelineUrl": "https://timeline.semestaonstage.com",
+  "studioUrl": "https://studio.semestaonstage.com",
+  "editorUrl": "https://editor.semestaonstage.com",
+  "adminUrl": "https://admin.semestaonstage.com",
+  "product": "Pusat Kendali Semesta"
 }

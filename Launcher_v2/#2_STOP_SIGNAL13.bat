@@ -7,36 +7,12 @@ echo      SIGNAL13 Shutdown
 echo ====================================
 echo.
 
-REM ===================================
-REM STOP CLOUDFLARE
-REM ===================================
-
-echo Stopping Cloudflare...
-taskkill /IM cloudflared.exe /F >nul 2>&1
-
-REM ===================================
-REM STOP GATEWAY (NODE)
-REM ===================================
-
-echo Stopping Gateway...
-taskkill /IM node.exe /F >nul 2>&1
-
-REM ===================================
-REM STOP ONTIME
-REM ===================================
-
-echo Closing OnTime...
-taskkill /IM ontime.exe /F >nul 2>&1
-
-REM ===================================
-REM CLOSE CHROME (OPTIONAL)
-REM ===================================
-
-REM taskkill /IM chrome.exe /F >nul 2>&1
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0SIGNAL13_LAUNCHER_V2.ps1" -Action log -Component launcher -Message "STOP requested"
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0SIGNAL13_LAUNCHER_V2.ps1" -Action stop
 
 echo.
 
-echo SIGNAL13 Successfully Stopped.
+echo SIGNAL13 Stop Completed.
 
-timeout /t 2 >nul
-exit
+powershell.exe -NoProfile -Command "Start-Sleep -Seconds 2"
+exit /b 0

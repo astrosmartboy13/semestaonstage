@@ -13,7 +13,7 @@ if "%URL%"=="" exit /b 1
 :WAIT
 
 powershell -command ^
-"try { Invoke-WebRequest '%URL%' -UseBasicParsing > $null; exit 0 } catch { exit 1 }"
+"try { Invoke-WebRequest '%URL%' -UseBasicParsing ^| Out-Null; exit 0 } catch { exit 1 }"
 
 if errorlevel 1 (
     timeout /t 1 >nul

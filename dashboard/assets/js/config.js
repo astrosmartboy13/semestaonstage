@@ -1,17 +1,19 @@
 const SIGNAL13 = {
 
-    dashboard: "/dashboard/",
+    dashboard: "https://dashboard.semestaonstage.com",
 
-    stageTimer: "/timer/",
+    stageTimer: "https://timer.semestaonstage.com",
 
-    backstage: "/backstage/",
+    backstage: "https://backstage.semestaonstage.com",
 
-    timeline: "/timeline/",
+    timeline: "https://timeline.semestaonstage.com",
 
 
-    editor: "/editor/",
+    editor: "https://editor.semestaonstage.com",
 
-    studio: "/studio/",
+    studio: "https://studio.semestaonstage.com",
+
+    controlCenter: "https://admin.semestaonstage.com",
 
     health: "/health",
 
@@ -19,12 +21,16 @@ const SIGNAL13 = {
 
     rundown: "",
 
-    instagram: "https://instagram.com/semestaonstage"
+    instagram: "https://www.instagram.com/semesta.show"
 
 };
 
 window.SIGNAL13 = SIGNAL13;
 
 function getLink(path){
+    if (/^https?:\/\//i.test(path)) {
+        return path;
+    }
+
     return window.location.origin + path;
 }

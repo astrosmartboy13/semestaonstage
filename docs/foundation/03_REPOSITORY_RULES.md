@@ -78,7 +78,7 @@ Examples:
 
 \- dashboard/
 
-\- launcher/
+\- Launcher_v2/
 
 \- server/
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIGNAL13 Admin</title>
+    <title>Pusat Kendali Semesta | Admin</title>
     <link rel="stylesheet" href="assets/css/admin.css">
 </head>
 
@@ -15,7 +15,12 @@
                 <p class="eyebrow">SIGNAL13</p>
                 <h1>Admin</h1>
             </div>
-            <p id="status-text" class="status" data-state="loading">Loading</p>
+            <div>
+                <p id="status-text" class="status" data-state="loading">Loading</p>
+                <form method="post" action="/logout">
+                    <button type="submit">Logout</button>
+                </form>
+            </div>
         </header>
 
         <section class="panel" aria-labelledby="event-config-title">
@@ -94,6 +99,48 @@
                     <span>Instagram URL</span>
                     <input name="instagramUrl" type="url" placeholder="https://instagram.com/...">
                     <small data-error-for="instagramUrl"></small>
+                </label>
+
+                <label>
+                    <span>Dashboard URL</span>
+                    <input name="dashboardUrl" type="url" placeholder="https://dashboard.semestaonstage.com">
+                    <small data-error-for="dashboardUrl"></small>
+                </label>
+
+                <label>
+                    <span>Timer URL</span>
+                    <input name="timerUrl" type="url" placeholder="https://timer.semestaonstage.com">
+                    <small data-error-for="timerUrl"></small>
+                </label>
+
+                <label>
+                    <span>Backstage URL</span>
+                    <input name="backstageUrl" type="url" placeholder="https://backstage.semestaonstage.com">
+                    <small data-error-for="backstageUrl"></small>
+                </label>
+
+                <label>
+                    <span>Timeline URL</span>
+                    <input name="timelineUrl" type="url" placeholder="https://timeline.semestaonstage.com">
+                    <small data-error-for="timelineUrl"></small>
+                </label>
+
+                <label>
+                    <span>Studio URL</span>
+                    <input name="studioUrl" type="url" placeholder="https://studio.semestaonstage.com">
+                    <small data-error-for="studioUrl"></small>
+                </label>
+
+                <label>
+                    <span>Editor URL</span>
+                    <input name="editorUrl" type="url" placeholder="https://editor.semestaonstage.com">
+                    <small data-error-for="editorUrl"></small>
+                </label>
+
+                <label>
+                    <span>Admin URL</span>
+                    <input name="adminUrl" type="url" placeholder="https://admin.semestaonstage.com">
+                    <small data-error-for="adminUrl"></small>
                 </label>
             </form>
         </section>

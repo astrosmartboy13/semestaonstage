@@ -74,6 +74,8 @@ Tanggung jawab:
 - melayani static Dashboard di `/dashboard/`;
 - menyediakan `/health`;
 - menyediakan `/api/status`;
+- menyediakan authenticated Admin dan Editor access;
+- menyediakan authenticated `PUT /api/event`;
 - menjadi reverse proxy ke OnTime;
 - mengumpulkan status runtime service;
 - menormalisasi status ke enum resmi;
@@ -108,9 +110,12 @@ Tanggung jawab:
 - menjalankan Gateway;
 - menjalankan Tunnel bila diperlukan;
 - menyediakan flow start/stop lokal;
-- di masa depan, menyediakan status ke Gateway melalui hook yang jelas.
+- mencegah duplicate Gateway/Tunnel yang dimiliki launcher;
+- menulis log operasional lokal;
+- mencatat process ownership runtime di `Launcher_v2/state/state.json`.
 
 Launcher tidak boleh menyimpan logika UI Dashboard.
+Launcher bukan source of truth runtime; Gateway tetap menjadi pusat Runtime API.
 
 ### Admin
 
@@ -276,7 +281,6 @@ SIGNAL13-DEV/
       icons/
       images/
       js/
-  launcher/
   Launcher_v2/
   server/
   docs/
@@ -292,8 +296,7 @@ Peran folder:
 | `dashboard/` | UI Pusat Kendali Semesta. |
 | `dashboard/assets/data/event.json` | Static event configuration. |
 | `dashboard/assets/js/` | Client-side data binding, runtime polling, clock, config. |
-| `launcher/` | Launcher legacy atau automation awal. |
-| `Launcher_v2/` | Launcher generasi baru. |
+| `Launcher_v2/` | Launcher operasional resmi untuk start, stop, restart, dan status. |
 | `server/` | Server legacy/alternatif. |
 | `docs/` | Dokumentasi arsitektur dan kontrak resmi. |
 

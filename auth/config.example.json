@@ -1,0 +1,5 @@
+{
+  "username": "adminsemesta",
+  "passwordHash": "scrypt:replace-with-salt:replace-with-hash",
+  "sessionSecret": "replace-with-random-session-secret"
+}
